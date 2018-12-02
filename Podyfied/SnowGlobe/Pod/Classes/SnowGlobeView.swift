@@ -11,6 +11,13 @@ import AudioToolbox
 
 private let lifetimeKey = "lifetime"
 
+#if swift(>=4.2)
+fileprivate typealias UIViewAutoresizing = UIView.AutoresizingMask
+fileprivate let kCAEmitterLayerLine = CAEmitterLayerEmitterShape.line
+fileprivate let kCAEmitterLayerOldestLast = CAEmitterLayerRenderMode.oldestLast
+#else
+#endif
+
 open class SnowGlobeView: UIView {
     
     //MARK: - Initializers
